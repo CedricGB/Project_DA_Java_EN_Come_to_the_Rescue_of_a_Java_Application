@@ -8,13 +8,14 @@ import java.util.stream.Collectors;
 public class WriteFile {
     private SortedMap<String, Integer> result;
     public WriteFile() {
-
+        this.result = new TreeMap<>();
     }
 
     /**
      * @create a file "result.out"
      */
     public void createFile() {
+
         try {
             File myObj = new File("result.out");
             if (myObj.createNewFile()) {
@@ -30,9 +31,16 @@ public class WriteFile {
      */
     public void writeToFile() {
 
+
         ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("symptoms.txt");
+
+
         createFile();
-        result = readSymptomDataFromFile.getSymptoms();
+
+
+        this.result = readSymptomDataFromFile.getSymptoms();
+        System.out.println("test 5");
+
 
         try {
 
